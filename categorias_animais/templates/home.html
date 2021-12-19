@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Lista de animais</h1>
+    <div class="table-responsive">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Alimentação</th>
+                        <th>Estimativa de Vida</th>
+                        <th>Categoria Animal</th>
+                        <th>
+                            <a href="{% url 'cadastrar' %}">
+                                <button class="btn btn-success btn-sm">Cradastar Animal</button>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for animal in animals %}
+                    <tr>
+                        <td>{{ animal.name }}</td>
+                        <td>{{ animal.food }}</td>
+                        <td>{{ animal.life_estimate }}</td>
+                        <td>{{ animal.animal_category }}</td>
+                        <td>
+                            <a href="{% url 'atualizar' pk=animal.id %}">
+                                <label class="btn btn-secondary btn-sm">Editar</label>
+                            </a>
+                            <a href="{% url 'deletar' pk=animal.id %}">
+                                <label class="btn btn-danger btn-sm">Excluir</label>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+    </div>
+{% endblock %}

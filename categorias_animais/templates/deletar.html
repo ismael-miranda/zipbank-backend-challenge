@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h3>Você quer deletar o Animal <em>{{animal.name}}</em>?</h3>
+<form method="POST">{% csrf_token %}
+    <button type="submit" class="btn btn-danger btn-sm float-left">Deletar</button>
+</form>
+    <a href="{% url 'home' %}"><button class="ml-1 btn btn-info btn-sm">Voltar</button></a>
+{% endblock %}ml>

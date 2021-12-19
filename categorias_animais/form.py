@@ -1,14 +1,8 @@
 from django.forms import ModelForm
-from .models import Animals, AnimalsCategory
+from .models import Animal
 
 
 class AnimalsForm(ModelForm):
     class Meta:
-        model = Animals
-        fields = "__all__"
-
-
-class AnimalsCategoryForm(ModelForm):
-    class Meta:
-        model = AnimalsCategory
+        model = Animal
         fields = "__all__"
