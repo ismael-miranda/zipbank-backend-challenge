@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Lista de animais</h1>
+    <h1 class="float-left">Lista de animais</h1>
+    <a href="api/animais" class="mt-2 float-right">
+        <label class="btn btn-info btn-sm">Ir para API</label>
+    </a>
     <div class="table-responsive">
 
             <table class="table table-hover">
@@ -23,7 +26,7 @@
                     <tr>
                         <td>{{ animal.name }}</td>
                         <td>{{ animal.food }}</td>
-                        <td>{{ animal.life_estimate }}</td>
+                        <td>{{ animal.life_estimate }} {{animal.animal_age}}</td>
                         <td>{{ animal.animal_category }}</td>
                         <td>
                             <a href="{% url 'atualizar' pk=animal.id %}">
