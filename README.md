@@ -9,3 +9,7 @@ Api desenvolvida com:
 O projeto contém um CRUD(Create, Read, Update, Delete) e Frontend com Bootstrap
 
 <p>Parametrizado o Docker e docker-compose</p>
+
+##### Referencia para Docker - docker-compose:
+_[Dockerizing a Django REST Framework Project](https://www.youtube.com/watch?v=Y_rh-VeC_j4)_
+
