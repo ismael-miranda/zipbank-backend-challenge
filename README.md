@@ -1,4 +1,4 @@
-# api-animais
+# zipbank-backend-challenge
 Api desenvolvida com:
 <ul>
 <li>Python 3.9</li>
