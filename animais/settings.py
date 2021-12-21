@@ -69,6 +69,12 @@ TEMPLATES = [
     },
 ]
 
+# Constante que determina a paginacao da API REST
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,
+}
+
 WSGI_APPLICATION = 'animais.wsgi.application'
 
 

@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from .models import Animal
 from .form import AnimalsForm
 
 
 # Create your views here.
 def home(request):
-    animals = Animal.objects.all()
+    animal = Animal.objects.all()
+# variavel qu receber a classe Paginator(objeto, numero de paginas de exibicao).
+    pagination = Paginator(animal, 3)
+
+    page_number = request.GET.get('page')
+    animals = pagination.get_page(page_number)
     context = {"animals": animals}
     return render(request, "home.html", context)
 

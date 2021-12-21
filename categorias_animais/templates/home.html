@@ -42,4 +42,21 @@
             </table>
 
     </div>
+    <div class="pagination">
+        <span class="step-links">
+            <span class="current">
+                Página {{ animals.number }} de {{ animals.paginator.num_pages }}.
+            </span>
+            {% if animals.has_previous %}
+                <a href="?page=1">&laquo; primeira</a> -
+                <a href="?page={{ animals.previous_page_number }}">anterior</a>
+            {% endif %}
+
+            {% if animals.has_next %}
+                <a href="?page={{ animals.next_page_number }}">próxima</a> -
+                <a href="?page={{ animals.paginator.num_pages }}">última &raquo;</a>
+            {% endif %}
+
+        </span>
+    </div>
 {% endblock %}
